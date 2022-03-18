@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class Topic_05_Element_Part3 {
+public class Topic_05_Element_Part3_Register {
     WebDriver driver;
     String projectPath = System.getProperty("user.dir");
     By fullNameTextbox = By.id("txtFirstname");
@@ -19,12 +19,16 @@ public class Topic_05_Element_Part3 {
     By txtCPassword = By.id("txtCPassword");
     By txtPhone = By.id("txtPhone");
 
-    @BeforeMethod
+    @BeforeClass
     public void beforeClass() {
         System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+
+    }
+    @BeforeMethod
+    public void beforeMethod() {
         driver.get("https://alada.vn/tai-khoan/dang-ky.html");
     }
 
@@ -101,7 +105,7 @@ public class Topic_05_Element_Part3 {
         Assert.assertEquals(driver.findElement(By.id("txtPhone-error")).getText(), "Số điện thoại phải từ 10-11 số.");
 
     }
-    @AfterMethod
+    @AfterClass
     public void afterClass() {
         driver.quit();
     }
