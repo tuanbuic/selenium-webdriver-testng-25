@@ -64,7 +64,7 @@ public class Topic_11_Action_part2 {
 
     @Test
     public void TC_04_dragdrop2() {
-        driver.get("https://automationfc.github.io/drag-drop-html5/")
+        driver.get("https://automationfc.github.io/drag-drop-html5/");
     }
 
     @Test
