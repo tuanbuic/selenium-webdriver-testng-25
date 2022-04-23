@@ -1,3 +1,4 @@
 *.idea
 .iml
 /out/
+/selenium-webdriver-testng-25.iml
